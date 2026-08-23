@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room Visualizer</title>
+
+<!-- The widget stylesheet. Every selector inside is scoped under `.rv-root`,
+     so it never touches this page's own markup (Requirement 10.8). -->
+<link rel="stylesheet" href="css/visualizer.css">
+
+<!-- Page-level styling belongs to the host page, not to the widget. The
+     stylesheet above ships no reset and no global rules, so a host page keeps
+     full control of its own chrome. -->
+<style>
+  .host-page {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+    background: #f6f4f1;
+    color: #2a2724;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  .host-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.65rem;
+  }
+
+  .host-intro {
+    margin: 0 0 1.5rem;
+    color: #6d665e;
+  }
+
+  .host-note {
+    margin: 1.25rem 0 0;
+    color: #6d665e;
+    font-size: 0.875rem;
+  }
+
+  /* The widget's design tokens live on its own root, so the container is the
+     one place a host page themes it:
+       #container { --rv-accent: #2f6f4f; } */
+</style>
+</head>
+
+<body class="host-page">
+  <h1 class="host-title">Room Visualizer</h1>
+  <p class="host-intro">
+    Upload a photo of a room, pick a surface, then pick a tile.
+  </p>
+
+  <!-- The one container the widget renders into. -->
+  <div id="container"></div>
+
+  <p class="host-note" id="host-note">
+    Served by the Room Visualizer API on this origin.
+  </p>
+
+  <!-- One module script, one constructor call, no build step (Requirement 10.1). -->
+  <script type="module">
+    import { RoomVisualizer } from './js/visualizer.js';
+
+    const visualizer = new RoomVisualizer('#container', {
+      // Empty means same origin: this page is served by the API process itself.
+      // Point it at, say, 'http://localhost:8000' when embedding elsewhere.
+      apiBaseUrl: '',
+
+      // Optional: 'floor', 'wall_left', 'wall_right', or 'wall_back'.
+      defaultPlane: 'floor',
+
+      // Optional: 'png' (lossless, the default) or 'jpeg'.
+      renderFormat: 'png',
+
+      // Optional: a tile id from GET /api/tiles, applied as soon as a photo is
+      // analysed — for example 'marble-polished-600x600' after asset setup.
+      initialTileId: null,
+
+      onRenderComplete(result) {
+        document.getElementById('host-note').textContent =
+          `Rendered in ${result.render_ms} ms.`;
+      },
+    });
+
+    // The same events are also dispatched on the container as `rv:scene-ready`,
+    // `rv:render-complete`, `rv:error`, and `rv:busy-change`, so a host page can
+    // integrate through listeners instead of callbacks.
+    window.roomVisualizer = visualizer;
+  </script>
+</body>
+</html>

@@ -1,0 +1,1076 @@
+{
+  "version": 1,
+  "tiles": [
+    {
+      "id": "sadhguru-1006-dark",
+      "name": "1006 Dark",
+      "file": "sadhguru-1006-dark.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1200-dark",
+      "name": "1200 Dark",
+      "file": "sadhguru-1200-dark.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1200-light",
+      "name": "1200 Light",
+      "file": "sadhguru-1200-light.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1225",
+      "name": "1225",
+      "file": "sadhguru-1225.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1228",
+      "name": "1228",
+      "file": "sadhguru-1228.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1229",
+      "name": "1229",
+      "file": "sadhguru-1229.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1230",
+      "name": "1230",
+      "file": "sadhguru-1230.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1301",
+      "name": "1301",
+      "file": "sadhguru-1301.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1309",
+      "name": "1309",
+      "file": "sadhguru-1309.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1602",
+      "name": "1602",
+      "file": "sadhguru-1602.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1707",
+      "name": "1707",
+      "file": "sadhguru-1707.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1006-light",
+      "name": "1006 Light",
+      "file": "sadhguru-1006-light.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1901",
+      "name": "1901",
+      "file": "sadhguru-1901.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1915",
+      "name": "1915",
+      "file": "sadhguru-1915.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1917",
+      "name": "1917",
+      "file": "sadhguru-1917.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-2425",
+      "name": "2425",
+      "file": "sadhguru-2425.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-2426",
+      "name": "2426",
+      "file": "sadhguru-2426.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-2622",
+      "name": "2622",
+      "file": "sadhguru-2622.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-2624-dark",
+      "name": "2624 Dark",
+      "file": "sadhguru-2624-dark.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-2624-light",
+      "name": "2624 Light",
+      "file": "sadhguru-2624-light.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3206",
+      "name": "3206",
+      "file": "sadhguru-3206.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3208",
+      "name": "3208",
+      "file": "sadhguru-3208.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1084",
+      "name": "1084",
+      "file": "sadhguru-1084.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3800",
+      "name": "3800",
+      "file": "sadhguru-3800.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3801",
+      "name": "3801",
+      "file": "sadhguru-3801.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3900",
+      "name": "3900",
+      "file": "sadhguru-3900.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-3901",
+      "name": "3901",
+      "file": "sadhguru-3901.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1106",
+      "name": "1106",
+      "file": "sadhguru-1106.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1161-dark",
+      "name": "1161 Dark",
+      "file": "sadhguru-1161-dark.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1161-light",
+      "name": "1161 Light",
+      "file": "sadhguru-1161-light.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1162-dark",
+      "name": "1162 Dark",
+      "file": "sadhguru-1162-dark.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1162-light",
+      "name": "1162 Light",
+      "file": "sadhguru-1162-light.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-1168",
+      "name": "1168",
+      "file": "sadhguru-1168.jpg",
+      "width_mm": 400,
+      "height_mm": 400,
+      "finish": "matt",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-bolivia-brown-end",
+      "name": "Bolivia Brown End",
+      "file": "sadhguru-bolivia-brown-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-owen-misty-end",
+      "name": "Owen Misty End",
+      "file": "sadhguru-owen-misty-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-owen-white-end",
+      "name": "Owen White End",
+      "file": "sadhguru-owen-white-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-sannagold-aqua-end",
+      "name": "Sannagold Aqua End",
+      "file": "sadhguru-sannagold-aqua-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-satvario-classic-end",
+      "name": "Satvario Classic End",
+      "file": "sadhguru-satvario-classic-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-seraphic-gold-end",
+      "name": "Seraphic Gold End",
+      "file": "sadhguru-seraphic-gold-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-veranda-bianco-end",
+      "name": "Veranda Bianco End",
+      "file": "sadhguru-veranda-bianco-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-acent-grey",
+      "name": "Acent Grey",
+      "file": "sadhguru-acent-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-clara-onyx-aqua",
+      "name": "Clara Onyx Aqua",
+      "file": "sadhguru-clara-onyx-aqua.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-crystal-pearl",
+      "name": "Crystal Pearl",
+      "file": "sadhguru-crystal-pearl.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-matrix-pearl",
+      "name": "Matrix Pearl",
+      "file": "sadhguru-matrix-pearl.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-colorado-white-end",
+      "name": "Colorado White End",
+      "file": "sadhguru-colorado-white-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-ottoman-crema",
+      "name": "Ottoman Crema",
+      "file": "sadhguru-ottoman-crema.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-phoenix-bianco",
+      "name": "Phoenix Bianco",
+      "file": "sadhguru-phoenix-bianco.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-rio-grey",
+      "name": "Rio Grey",
+      "file": "sadhguru-rio-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-romano-beige",
+      "name": "Romano Beige",
+      "file": "sadhguru-romano-beige.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-royal-grey",
+      "name": "Royal Grey",
+      "file": "sadhguru-royal-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-royal-nero",
+      "name": "Royal Nero",
+      "file": "sadhguru-royal-nero.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-satvario-radial",
+      "name": "Satvario Radial",
+      "file": "sadhguru-satvario-radial.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-statuario-celestial-grey",
+      "name": "Statuario Celestial Grey",
+      "file": "sadhguru-statuario-celestial-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-sydney-crema",
+      "name": "Sydney Crema",
+      "file": "sadhguru-sydney-crema.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oriont-black-end",
+      "name": "Oriont Black End",
+      "file": "sadhguru-oriont-black-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-esmagold-teal-end",
+      "name": "Esmagold Teal End",
+      "file": "sadhguru-esmagold-teal-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-fantasy-black",
+      "name": "Fantasy Black",
+      "file": "sadhguru-fantasy-black.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-forest-green",
+      "name": "Forest Green",
+      "file": "sadhguru-forest-green.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-milano-black",
+      "name": "Milano Black",
+      "file": "sadhguru-milano-black.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-bronics",
+      "name": "Bronics",
+      "file": "sadhguru-bronics.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-aristo-teal",
+      "name": "Aristo Teal",
+      "file": "sadhguru-aristo-teal.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-nikola-brown",
+      "name": "Nikola Brown",
+      "file": "sadhguru-nikola-brown.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-nero-emprador",
+      "name": "Nero Emprador",
+      "file": "sadhguru-nero-emprador.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-ice-cube-blue",
+      "name": "Ice Cube Blue",
+      "file": "sadhguru-ice-cube-blue.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-black-portoro",
+      "name": "Black Portoro",
+      "file": "sadhguru-black-portoro.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "high gloss",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-forest-sky-end",
+      "name": "Forest Sky End",
+      "file": "sadhguru-forest-sky-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-glaciar-white-end",
+      "name": "Glaciar White End",
+      "file": "sadhguru-glaciar-white-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-harmony-peach-end",
+      "name": "Harmony Peach End",
+      "file": "sadhguru-harmony-peach-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-ice-berge-green-gold-end",
+      "name": "Ice Berge Green Gold End",
+      "file": "sadhguru-ice-berge-green-gold-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-monolight-aqua-end",
+      "name": "Monolight Aqua End",
+      "file": "sadhguru-monolight-aqua-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oriont-white-end",
+      "name": "Oriont White End",
+      "file": "sadhguru-oriont-white-end.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-jems-white",
+      "name": "Jems White",
+      "file": "sadhguru-jems-white.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-beetel-beige",
+      "name": "Beetel Beige",
+      "file": "sadhguru-beetel-beige.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-beetel-grey",
+      "name": "Beetel Grey",
+      "file": "sadhguru-beetel-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-breckly-satuario",
+      "name": "Breckly Satuario",
+      "file": "sadhguru-breckly-satuario.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oslo-gold",
+      "name": "Oslo Gold",
+      "file": "sadhguru-oslo-gold.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oslo-green",
+      "name": "Oslo Green",
+      "file": "sadhguru-oslo-green.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-quill-grey",
+      "name": "Quill Grey",
+      "file": "sadhguru-quill-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-sunvista-crema",
+      "name": "Sunvista Crema",
+      "file": "sadhguru-sunvista-crema.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-geona-white",
+      "name": "Geona White",
+      "file": "sadhguru-geona-white.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-omicron-multi",
+      "name": "Omicron Multi",
+      "file": "sadhguru-omicron-multi.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-plain-white",
+      "name": "Plain White",
+      "file": "sadhguru-plain-white.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-alp-satuario",
+      "name": "Alp Satuario",
+      "file": "sadhguru-alp-satuario.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-carara-smoke",
+      "name": "Carara Smoke",
+      "file": "sadhguru-carara-smoke.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-classic-coral",
+      "name": "Classic Coral",
+      "file": "sadhguru-classic-coral.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-colonial-bianco",
+      "name": "Colonial Bianco",
+      "file": "sadhguru-colonial-bianco.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-elite-satuario",
+      "name": "Elite Satuario",
+      "file": "sadhguru-elite-satuario.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-milano-white",
+      "name": "Milano White",
+      "file": "sadhguru-milano-white.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-beetel-beige-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Beetel Beige",
+      "file": "sadhguru-beetel-beige-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-beetel-grey-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Beetel Grey",
+      "file": "sadhguru-beetel-grey-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-breckly-satuario-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Breckly Satuario",
+      "file": "sadhguru-breckly-satuario-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oslo-gold-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Oslo Gold",
+      "file": "sadhguru-oslo-gold-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-oslo-green-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Oslo Green",
+      "file": "sadhguru-oslo-green-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-quill-grey-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Quill Grey",
+      "file": "sadhguru-quill-grey-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-sunvista-crema-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Sunvista Crema",
+      "file": "sadhguru-sunvista-crema-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-geona-white-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Geona White",
+      "file": "sadhguru-geona-white-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-omicron-multi-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Omicron Multi",
+      "file": "sadhguru-omicron-multi-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-plain-white-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Plain White",
+      "file": "sadhguru-plain-white-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-swat-satvario",
+      "name": "Swat Satvario",
+      "file": "sadhguru-swat-satvario.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-alp-satuario-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Alp Satuario",
+      "file": "sadhguru-alp-satuario-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-carara-smoke-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Carara Smoke",
+      "file": "sadhguru-carara-smoke-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-classic-coral-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Classic Coral",
+      "file": "sadhguru-classic-coral-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-colonial-bianco-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Colonial Bianco",
+      "file": "sadhguru-colonial-bianco-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-elite-satuario-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Elite Satuario",
+      "file": "sadhguru-elite-satuario-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "sadhguru-kimiko-white",
+      "name": "Kimiko White",
+      "file": "sadhguru-kimiko-white.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-astoria-gold",
+      "name": "Astoria Gold",
+      "file": "sadhguru-astoria-gold.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-azores-light",
+      "name": "Azores Light",
+      "file": "sadhguru-azores-light.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-prexious-gold",
+      "name": "Prexious Gold",
+      "file": "sadhguru-prexious-gold.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-antalya-satuario",
+      "name": "Antalya Satuario",
+      "file": "sadhguru-antalya-satuario.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-spyker-grey",
+      "name": "Spyker Grey",
+      "file": "sadhguru-spyker-grey.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "carving",
+      "gloss": 0.1
+    },
+    {
+      "id": "sadhguru-jems-white-cr-2x4-sadhguru-1-1-part-2",
+      "name": "Jems White",
+      "file": "sadhguru-jems-white-cr-2x4-sadhguru-1-1-part-2.jpg",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "glossy",
+      "gloss": 0.85
+    },
+    {
+      "id": "marble-polished-600x600",
+      "name": "Polished Marble 600x600",
+      "file": "marble_600x600.png",
+      "width_mm": 600,
+      "height_mm": 600,
+      "finish": "polished",
+      "gloss": 0.85
+    },
+    {
+      "id": "marble-polished-600x1200",
+      "name": "Polished Marble 600x1200",
+      "file": "marble_600x1200.png",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "polished",
+      "gloss": 0.85
+    },
+    {
+      "id": "wood-satin-600x600",
+      "name": "Satin Wood Plank 600x600",
+      "file": "wood_600x600.png",
+      "width_mm": 600,
+      "height_mm": 600,
+      "finish": "satin",
+      "gloss": 0.35
+    },
+    {
+      "id": "wood-satin-600x1200",
+      "name": "Satin Wood Plank 600x1200",
+      "file": "wood_600x1200.png",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "satin",
+      "gloss": 0.35
+    },
+    {
+      "id": "concrete-matte-600x600",
+      "name": "Matte Concrete 600x600",
+      "file": "concrete_600x600.png",
+      "width_mm": 600,
+      "height_mm": 600,
+      "finish": "matte",
+      "gloss": 0.1
+    },
+    {
+      "id": "concrete-matte-600x1200",
+      "name": "Matte Concrete 600x1200",
+      "file": "concrete_600x1200.png",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "matte",
+      "gloss": 0.1
+    },
+    {
+      "id": "terrazzo-honed-600x600",
+      "name": "Honed Terrazzo 600x600",
+      "file": "terrazzo_600x600.png",
+      "width_mm": 600,
+      "height_mm": 600,
+      "finish": "honed",
+      "gloss": 0.45
+    },
+    {
+      "id": "terrazzo-honed-600x1200",
+      "name": "Honed Terrazzo 600x1200",
+      "file": "terrazzo_600x1200.png",
+      "width_mm": 600,
+      "height_mm": 1200,
+      "finish": "honed",
+      "gloss": 0.45
+    }
+  ]
+}

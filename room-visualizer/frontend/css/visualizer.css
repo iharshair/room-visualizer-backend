@@ -1,0 +1,567 @@
+/* ==========================================================================
+   Room Visualizer — embeddable widget stylesheet
+   ==========================================================================
+
+   SCOPING INVARIANT (Requirement 10.8, design Property 34)
+
+   Every selector in this file is either `.rv-root` itself or a descendant of
+   `.rv-root`. Nothing here can reach host page markup.
+
+   Rules that must hold for every edit to this file:
+
+     1. Each selector in every comma-separated list starts with `.rv-root`.
+     2. No bare element type selectors, anywhere — not `button`, not `canvas`,
+        not even as a descendant such as `.rv-root button`. Only `.rv-*`
+        classes, attribute selectors, and pseudo-classes are used.
+     3. No `:root`, no `html`, no `body`, no universal selector `*`.
+     4. No global reset. `box-sizing` is applied to named component parts
+        through an explicit list, never through a blanket selector.
+     5. No at-rules. Responsiveness comes from flex wrapping plus `min()`
+        and `clamp()`, so the file is a flat list of scoped rules with no
+        nested blocks a reader or a linter has to reason about.
+     6. `outline` is never set to `none` or `0`. Focus is restyled through
+        `:focus-visible`, never removed (Requirement 10.7).
+
+   All component design tokens are declared on `.rv-root`, so a host page can
+   theme the widget by overriding them on the container element and nothing
+   else — `#my-container { --rv-accent: #2f6f4f; }`.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Root — design tokens and outer layout
+   -------------------------------------------------------------------------- */
+
+.rv-root {
+  /* Tokens named in the design contract. */
+  --rv-accent: #b4552d;
+  --rv-radius: 10px;
+  --rv-gap: 16px;
+
+  /* Supporting tokens, all local to the component. */
+  --rv-accent-strong: #8f4021;
+  --rv-accent-soft: rgba(180, 85, 45, 0.12);
+  --rv-surface: #fbf9f6;
+  --rv-surface-raised: #ffffff;
+  --rv-surface-sunken: #f2eee8;
+  --rv-border: #e2dbd1;
+  --rv-border-strong: #cdc4b7;
+  --rv-text: #2a2724;
+  --rv-text-muted: #6d665e;
+  --rv-error-text: #97231b;
+  --rv-error-surface: #fdf2f0;
+  --rv-error-border: #e9c4bf;
+  --rv-shadow: 0 1px 2px rgba(42, 39, 36, 0.06), 0 6px 18px rgba(42, 39, 36, 0.07);
+  --rv-focus-ring: 3px;
+  --rv-transition: 160ms ease;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rv-gap);
+  align-items: flex-start;
+  padding: var(--rv-gap);
+  border: 1px solid var(--rv-border);
+  border-radius: calc(var(--rv-radius) + 4px);
+  background: var(--rv-surface);
+  color: var(--rv-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: start;
+}
+
+/* box-sizing for the named parts, in place of a global reset. */
+.rv-root .rv-stage,
+.rv-root .rv-panel,
+.rv-root .rv-section,
+.rv-root .rv-planes,
+.rv-root .rv-plane-button,
+.rv-root .rv-tiles,
+.rv-root .rv-tile-item,
+.rv-root .rv-tile-button,
+.rv-root .rv-controls,
+.rv-root .rv-control,
+.rv-root .rv-control-input,
+.rv-root .rv-upload,
+.rv-root .rv-upload-label,
+.rv-root .rv-status,
+.rv-root .rv-error,
+.rv-root .rv-spinner {
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------------------------------
+   Stage — the two stacked canvases and the busy overlay
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-stage {
+  position: relative;
+  flex: 1 1 min(100%, 34rem);
+  min-width: min(100%, 18rem);
+  overflow: hidden;
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius);
+  background-color: var(--rv-surface-sunken);
+  background-image:
+    linear-gradient(45deg, rgba(42, 39, 36, 0.045) 25%, transparent 25%, transparent 75%, rgba(42, 39, 36, 0.045) 75%),
+    linear-gradient(45deg, rgba(42, 39, 36, 0.045) 25%, transparent 25%, transparent 75%, rgba(42, 39, 36, 0.045) 75%);
+  background-position: 0 0, 12px 12px;
+  background-size: 24px 24px;
+  box-shadow: var(--rv-shadow);
+}
+
+/* Base canvas: the photograph, replaced by each composited render. It defines
+   the stage height, so it is in normal flow at intrinsic aspect ratio. */
+.rv-root .rv-canvas-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity var(--rv-transition), filter var(--rv-transition);
+}
+
+/* Overlay canvas: plane outlines and hover/selected highlight. Stacked exactly
+   over the base canvas and sized by CSS, so `displayScale` in the component
+   stays a single factor for both axes. */
+.rv-root .rv-canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+
+/* Shared class, if the component tags both canvases with it. */
+.rv-root .rv-canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.rv-root .rv-canvas-overlay:focus-visible,
+.rv-root .rv-canvas-image:focus-visible {
+  outline: var(--rv-focus-ring) solid var(--rv-accent);
+  outline-offset: -3px;
+}
+
+/* Empty stage hint, shown before a photograph is loaded. */
+.rv-root .rv-stage-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 14rem;
+  padding: var(--rv-gap);
+  color: var(--rv-text-muted);
+  text-align: center;
+}
+
+/* While a request is in flight the stage dims. The component sets
+   aria-busy on the root, so appearance follows the accessibility state
+   rather than a second, separately maintained class. */
+.rv-root[aria-busy="true"] .rv-canvas-image {
+  opacity: 0.5;
+  filter: saturate(0.65);
+}
+
+.rv-root[aria-busy="true"] .rv-canvas-overlay {
+  cursor: progress;
+}
+
+
+/* --------------------------------------------------------------------------
+   Spinner — busy indicator centred on the stage
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border: 4px solid var(--rv-accent-soft);
+  border-top-color: var(--rv-accent);
+  border-right-color: var(--rv-accent);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: rotate(-45deg);
+}
+
+.rv-root[aria-busy="true"] .rv-spinner,
+.rv-root .rv-spinner.rv-is-visible {
+  display: block;
+}
+
+
+/* --------------------------------------------------------------------------
+   Control panel
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-panel {
+  display: flex;
+  flex: 1 1 18rem;
+  flex-direction: column;
+  gap: var(--rv-gap);
+  min-width: min(100%, 15rem);
+  max-width: 24rem;
+}
+
+.rv-root .rv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius);
+  background: var(--rv-surface-raised);
+}
+
+.rv-root .rv-section-title {
+  margin: 0;
+  color: var(--rv-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* --------------------------------------------------------------------------
+   Photograph selection — real file input kept focusable, styled label
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* The input stays in the layout and stays focusable — it is clipped rather
+   than hidden with `display: none`, so keyboard users can still reach it and
+   activate it with Enter or Space. The paired label supplies its
+   accessible name and its visible affordance. */
+.rv-root .rv-upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rv-root .rv-upload-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--rv-accent);
+  border-radius: var(--rv-radius);
+  background: var(--rv-accent);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color var(--rv-transition), border-color var(--rv-transition);
+}
+
+.rv-root .rv-upload-label:hover {
+  background: var(--rv-accent-strong);
+  border-color: var(--rv-accent-strong);
+}
+
+/* The input is visually clipped, so its focus ring has to be drawn on the
+   label that stands in for it. This assumes the label follows the input in
+   document order. */
+.rv-root .rv-upload-input:focus-visible + .rv-upload-label,
+.rv-root .rv-upload-label:focus-visible {
+  outline: var(--rv-focus-ring) solid var(--rv-accent-strong);
+  outline-offset: 2px;
+}
+
+.rv-root .rv-upload-input:disabled + .rv-upload-label {
+  border-color: var(--rv-border-strong);
+  background: var(--rv-border-strong);
+  color: var(--rv-surface-raised);
+  cursor: not-allowed;
+}
+
+.rv-root .rv-upload-hint {
+  color: var(--rv-text-muted);
+  font-size: 13px;
+}
+
+.rv-root .rv-file-name {
+  color: var(--rv-text-muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+
+/* --------------------------------------------------------------------------
+   Plane selection — role="radiogroup" of role="radio" buttons
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rv-root .rv-plane-button {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--rv-border-strong);
+  border-radius: 999px;
+  background: var(--rv-surface-raised);
+  color: var(--rv-text);
+  cursor: pointer;
+  font: inherit;
+  transition: background-color var(--rv-transition), border-color var(--rv-transition), color var(--rv-transition);
+}
+
+.rv-root .rv-plane-button:hover {
+  border-color: var(--rv-accent);
+  background: var(--rv-accent-soft);
+}
+
+.rv-root .rv-plane-button[aria-checked="true"] {
+  border-color: var(--rv-accent);
+  background: var(--rv-accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.rv-root .rv-plane-button:focus-visible {
+  outline: var(--rv-focus-ring) solid var(--rv-accent-strong);
+  outline-offset: 2px;
+}
+
+.rv-root .rv-plane-button:disabled {
+  border-color: var(--rv-border);
+  background: var(--rv-surface-sunken);
+  color: var(--rv-text-muted);
+  cursor: not-allowed;
+}
+
+.rv-root .rv-planes-empty {
+  color: var(--rv-text-muted);
+  font-size: 13px;
+}
+
+/* Empty-and-loading message for the tile list. Styled identically to the
+   plane list's, but named for its own part so the two can diverge. */
+.rv-root .rv-tiles-empty {
+  color: var(--rv-text-muted);
+  font-size: 13px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Tile selection — list of aria-pressed buttons
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: 10px;
+  max-height: 22rem;
+  padding: 2px;
+  margin: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.rv-root .rv-tile-item {
+  display: block;
+  margin: 0;
+}
+
+.rv-root .rv-tile-button {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius);
+  background: var(--rv-surface-raised);
+  color: var(--rv-text);
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+  transition: border-color var(--rv-transition), box-shadow var(--rv-transition), background-color var(--rv-transition);
+}
+
+.rv-root .rv-tile-button:hover {
+  border-color: var(--rv-border-strong);
+  box-shadow: var(--rv-shadow);
+}
+
+.rv-root .rv-tile-button[aria-pressed="true"] {
+  border-color: var(--rv-accent);
+  background: var(--rv-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--rv-accent);
+}
+
+.rv-root .rv-tile-button:focus-visible {
+  outline: var(--rv-focus-ring) solid var(--rv-accent-strong);
+  outline-offset: 2px;
+}
+
+.rv-root .rv-tile-button:disabled {
+  background: var(--rv-surface-sunken);
+  color: var(--rv-text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.rv-root .rv-tile-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: calc(var(--rv-radius) - 4px);
+  background-color: var(--rv-surface-sunken);
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.rv-root .rv-tile-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.rv-root .rv-tile-meta {
+  display: block;
+  color: var(--rv-text-muted);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+
+/* --------------------------------------------------------------------------
+   Numeric controls — rotation and grout
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rv-root .rv-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rv-root .rv-control-label {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* The control's name. Paired with `.rv-control-value` inside the label, which
+   is a flex row with `space-between`, so this side must not absorb the gap. */
+.rv-root .rv-control-text {
+  flex: 0 1 auto;
+  overflow-wrap: anywhere;
+}
+
+.rv-root .rv-control-value {
+  color: var(--rv-text-muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.rv-root .rv-control-input {
+  width: 100%;
+  min-height: 32px;
+  accent-color: var(--rv-accent);
+  cursor: pointer;
+}
+
+.rv-root .rv-control-input:focus-visible {
+  outline: var(--rv-focus-ring) solid var(--rv-accent-strong);
+  outline-offset: 3px;
+}
+
+.rv-root .rv-control-input:disabled {
+  accent-color: var(--rv-border-strong);
+  cursor: not-allowed;
+}
+
+
+/* --------------------------------------------------------------------------
+   Status and error regions
+   -------------------------------------------------------------------------- */
+
+/* role="status" aria-live="polite" — routine progress text. */
+.rv-root .rv-status {
+  flex: 1 1 100%;
+  min-height: 1.45em;
+  color: var(--rv-text-muted);
+  font-size: 13px;
+}
+
+/* role="alert" — the API_Client's human-readable message, verbatim. */
+.rv-root .rv-error {
+  flex: 1 1 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--rv-error-border);
+  border-left: 4px solid var(--rv-error-text);
+  border-radius: var(--rv-radius);
+  background: var(--rv-error-surface);
+  color: var(--rv-error-text);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Collapse both regions while they carry no text, so neither leaves a gap. */
+.rv-root .rv-status:empty,
+.rv-root .rv-error:empty {
+  display: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+
+.rv-root .rv-hidden {
+  display: none;
+}
+
+/* Available to screen readers, removed from the visual layout, still
+   focusable if it contains a control. */
+.rv-root .rv-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}

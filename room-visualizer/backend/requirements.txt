@@ -1,0 +1,24 @@
+# AI Room & Tile Visualizer - runtime dependencies
+# Target interpreter: Python 3.11+
+# Every runtime dependency below is pinned to an exact version (==) so a clone
+# reproduces the verified environment. See the labelled section at the bottom
+# for development and test dependencies.
+
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+python-multipart==0.0.32
+pydantic==2.13.4
+pydantic-settings==2.15.0
+numpy==2.3.5
+opencv-python==4.14.0.94
+onnxruntime==1.29.0
+httpx==0.28.1
+
+# --- development / test dependencies ---
+# Not required to run the service. Install these to run the test suite:
+#   pip install -r backend/requirements.txt
+
+pytest==9.1.1
+pytest-cov==7.1.0
+hypothesis==6.165.10
+psutil==7.2.2
